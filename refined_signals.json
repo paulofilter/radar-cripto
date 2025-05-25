@@ -20,5 +20,16 @@
       "RSI neutro com tendência de alta",
       "Volume acima da média"
     ]
+  },
+  {
+    "symbol": "SOL/USDT",
+    "score": 7,
+    "classification": "Moderado",
+    "direction": "Bearish",
+    "signals": [
+      "Preço abaixo da MA50",
+      "Volume médio",
+      "RSI neutro"
+    ]
   }
 ]

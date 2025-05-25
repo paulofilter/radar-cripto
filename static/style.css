@@ -1,5 +1,16 @@
 
-body { font-family: Arial, sans-serif; background: #111; color: #fff; padding: 20px; }
-h1 { color: #00ffcc; }
-.card { background: #222; padding: 15px; margin: 15px 0; border-radius: 8px; }
-.card h2 { color: #00e0ff; }
+body { font-family: Arial, sans-serif; background: #111; color: #fff; padding: 20px; margin: 0; }
+.logo-bar { display: flex; align-items: center; gap: 15px; background: #0d0d0d; padding: 10px 20px; }
+.logo-img { width: 60px; height: 60px; }
+h1 { color: #00ffcc; margin: 0; }
+.subtitle { margin: 0; color: #aaa; font-size: 0.9em; }
+.intro { background: #222; padding: 15px; margin-top: 10px; border-radius: 5px; }
+.filters { margin: 20px 0; display: flex; gap: 10px; flex-wrap: wrap; }
+.filters input, .filters select, .filters button {
+    padding: 8px; border-radius: 5px; border: none;
+}
+.card {
+    background: #222; padding: 15px; margin-bottom: 15px; border-left: 4px solid #00ffcc;
+    border-radius: 5px;
+}
+.card h2 { margin: 0 0 10px 0; color: #00e0ff; }

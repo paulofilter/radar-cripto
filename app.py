@@ -8,4 +8,17 @@ app = Flask(__name__)
 def index():
     with open('refined_signals.json', 'r', encoding='utf-8') as f:
         signals = json.load(f)
-    return render_template('index.html', signals=signals)
+
+    classification = request.args.get('classification')
+    direction = request.args.get('direction')
+    symbol = request.args.get('symbol')
+
+    filtered = signals
+    if classification:
+        filtered = [s for s in filtered if s['classification'].lower() == classification.lower()]
+    if direction:
+        filtered = [s for s in filtered if s['direction'].lower() == direction.lower()]
+    if symbol:
+        filtered = [s for s in filtered if symbol.upper() in s['symbol'].upper()]
+
+    return render_template('index.html', signals=filtered)

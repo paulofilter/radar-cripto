@@ -5,10 +5,37 @@
     <meta charset="UTF-8">
     <title>Radar Cripto</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="/static/logo.png">
 </head>
 <body>
-    <h1>📡 Radar Cripto</h1>
-    <p>Detecção automática de zonas de interesse</p>
+    <div class="logo-bar">
+        <img src="/static/logo.png" alt="Radar Cripto" class="logo-img">
+        <div>
+            <h1>Radar Cripto</h1>
+            <p class="subtitle">Detecção automática de zonas de interesse</p>
+        </div>
+    </div>
+
+    <div class="intro">
+        <p>O Radar Cripto analisa automaticamente mais de <strong>800 pares de criptomoedas</strong> com base em indicadores técnicos como médias móveis, RSI, volume e estrutura de mercado. Você não precisa mais abrir gráfico por gráfico — o radar faz isso por você e te mostra onde estão as oportunidades.</p>
+    </div>
+
+    <form method="get" class="filters">
+        <input type="text" name="symbol" placeholder="Símbolo (ex: BTC)">
+        <select name="classification">
+            <option value="">Classificação</option>
+            <option value="Premium">Premium</option>
+            <option value="Forte">Forte</option>
+            <option value="Moderado">Moderado</option>
+        </select>
+        <select name="direction">
+            <option value="">Direção</option>
+            <option value="Bullish">Bullish</option>
+            <option value="Bearish">Bearish</option>
+        </select>
+        <button type="submit">Filtrar</button>
+    </form>
+
     {% for s in signals %}
     <div class="card">
         <h2>{{ s.symbol }}</h2>
