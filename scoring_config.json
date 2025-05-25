@@ -1,0 +1,46 @@
+{
+  "categories": {
+    "TREND": {
+      "max_points": 25,
+      "description": "Tend\u00eancia principal do ativo"
+    },
+    "STRUCTURE": {
+      "max_points": 25,
+      "description": "Estrutura de mercado (OB, BOS, CHoCH)"
+    },
+    "VOLUME": {
+      "max_points": 20,
+      "description": "Confirma\u00e7\u00e3o por volume"
+    },
+    "TECHNICAL_FILTERS": {
+      "max_points": 15,
+      "description": "Filtros t\u00e9cnicos (RSI, etc.)"
+    },
+    "HISTORY": {
+      "max_points": 15,
+      "description": "Hist\u00f3rico de desempenho"
+    }
+  },
+  "classification": {
+    "PREMIUM": {
+      "min_score": 85,
+      "max_score": 100,
+      "description": "Sinal de alta qualidade com m\u00faltiplas conflu\u00eancias"
+    },
+    "FORTE": {
+      "min_score": 70,
+      "max_score": 84,
+      "description": "Sinal forte com boa conflu\u00eancia"
+    },
+    "MODERADO": {
+      "min_score": 50,
+      "max_score": 69,
+      "description": "Sinal moderado com algumas conflu\u00eancias"
+    },
+    "FRACO": {
+      "min_score": 30,
+      "max_score": 49,
+      "description": "Sinal fraco com poucas conflu\u00eancias"
+    }
+  }
+}
