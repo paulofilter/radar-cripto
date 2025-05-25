@@ -12,9 +12,6 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 import pandas as pd
 import numpy as np
 
-# Importar módulos personalizados
-from data_api.binance_monitor import BinanceMonitor, get_monitoring_stats
-
 # Configurações
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 STATIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
@@ -27,9 +24,6 @@ os.makedirs(DATA_DIR, exist_ok=True)
 app = Flask(__name__, 
             static_folder=STATIC_DIR,
             template_folder=TEMPLATES_DIR)
-
-# Inicializar monitor Binance
-binance_monitor = BinanceMonitor()
 
 # Carregar dados de exemplo para desenvolvimento
 def load_sample_signals():
@@ -150,8 +144,7 @@ def settings():
 
 # Iniciar servidor
 if __name__ == '__main__':
-    # Atualizar pares monitorados ao iniciar
-    binance_monitor.get_active_pairs()
+    
     
     # Iniciar servidor Flask
     app.run(host='0.0.0.0', port=8080, debug=True)
