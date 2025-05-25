@@ -2,51 +2,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Radar Cripto</title>
-  <link rel="stylesheet" href="/static/style.css" />
+    <meta charset="UTF-8">
+    <title>Radar Cripto</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <div class="container">
     <h1>📡 Radar Cripto</h1>
     <p>Detecção automática de zonas de interesse</p>
-
-    <div class="filtros">
-      <label>Classificação mínima:
-        <select>
-          <option>Moderado ou melhor</option>
-          <option>Forte</option>
-          <option>Premium</option>
-        </select>
-      </label>
-      <label>Direção:
-        <select>
-          <option>Todos</option>
-          <option>Bullish</option>
-          <option>Bearish</option>
-        </select>
-      </label>
-      <label>Símbolo:
-        <select>
-          <option>Todos</option>
-          <option>BTCUSDT</option>
-          <option>ETHUSDT</option>
-        </select>
-      </label>
-    </div>
-
-    <div class="resultados">
-      <div class="card">
-        <h2>BTC/USDT</h2>
-        <p>Score: 8/10 (Forte)</p>
+    {% for s in signals %}
+    <div class="card">
+        <h2>{{ s.symbol }}</h2>
+        <p><strong>Score:</strong> {{ s.score }}/10 ({{ s.classification }})</p>
+        <p><strong>Direção:</strong> {{ s.direction }}</p>
         <ul>
-          <li>Golden Cross MA50/200</li>
-          <li>Volume alto</li>
-          <li>RSI em sobrecompra</li>
+            {% for item in s.signals %}
+            <li>{{ item }}</li>
+            {% endfor %}
         </ul>
-      </div>
     </div>
-  </div>
+    {% endfor %}
 </body>
 </html>
