@@ -1,0 +1,21 @@
+
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+.filtros select {
+  margin: 0.5rem 1rem 1rem 0;
+  padding: 0.3rem;
+}
+.card {
+  background: #161b22;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
